@@ -34,6 +34,7 @@ nms = 2
 # Instalção
 Ver = os.path.exists('.Instalação')
 if not Ver:
+    print(f'{vd}Instalação')
     os.system('clear')
     os.system('pkg install figlet -y')
     os.system('pkg install ruby -y')
