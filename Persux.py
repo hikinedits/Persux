@@ -29,7 +29,7 @@ if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
         }
 fi
 '''
-nms = 1
+nms = 2
 
 # Instalção
 Ver = os.path.exists('.Instalação')
