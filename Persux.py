@@ -35,8 +35,8 @@ nms = 2
 Ver = os.path.exists('.Instalação')
 if not Ver:
     os.system('clear')
-    os.system('pkg install figlet')
-    os.system('pkg install ruby')
+    os.system('pkg install figlet -y')
+    os.system('pkg install ruby -y')
     os.system('y')
     os.system('clear')
     os.chdir('/data/data/com.termux/files/home/')
