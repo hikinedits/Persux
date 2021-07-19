@@ -1,3 +1,4 @@
+#BY_Lursy >:)
 from time import sleep
 import os
 
@@ -19,7 +20,9 @@ export HISTCONTROL=ignoreboth
 banner = '''echo -e '\e[0;~COR~m'
 figlet ~N~
 echo -e '\e[m\n' '''
+
 ac = f'figlet ~N~ |lolcat -a -d 25'
+
 Branco = '''PROMPT_DIRTRIM=2
 PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;97m\]\$\[\e[1;~COR~m\] '
 
@@ -32,16 +35,14 @@ fi
 nms = 2
 
 # Instalção
+os.chdir('/data/data/com.termux/files/home/')
 Ver = os.path.exists('.Instalação')
 if not Ver:
     os.system('clear')
-    print(f'{vd}Instalação')
-    sleep(1)
     os.system('pkg install figlet -y')
     os.system('pkg install ruby -y')
     os.system('y')
     os.system('clear')
-    os.chdir('/data/data/com.termux/files/home/')
     os.system('git clone https://github.com/busyloop/lolcat')
     os.system('clear')
     os.chdir('/data/data/com.termux/files/home/lolcat/bin/')
@@ -57,30 +58,102 @@ if not Ver:
     os.system('clear')
     nms = 1
 
+
 os.chdir('/data/data/com.termux/files/usr/etc/')
 vn = os.path.exists('.Nick')
 vs = os.path.exists('.Senha')
 vc = os.path.exists('.Cor')
-cont = 1
 
+cont = 1
 senha = ''
 pss = ''
 nick = ''
 cor = ''
+l = False
+
+
+def contagem():
+    global l
+    os.chdir('/data/data/com.termux/files/home/')
+    l = os.path.exists('.lursy')
+    if l == True:
+        lursyr = open('.lursy', 'r')
+        os.system('rm -rf .lursy')
+        lursym = open('.lursy', 'w')
+        lursym.write(f'{lursyr.read()}1')
+
+def historia():
+    if l == True:
+        os.system('clear')
+        lursym = open('.lursy', 'r')
+        nl = len(lursym.read())
+        if nl == 4:
+            print(f'{cy}~Lursy: {vd}Mano...')
+            sleep(0.8)
+            print('        Eu voltei, mas não porque estou melhor')
+            sleep(1)
+            print('        Eu estava meio só e vim perguntar se vc precisa de alguma coisa')
+            sleep(1)
+            pre = str(input(f'\n{am}Você precisa de algo?[S/N]: {ve}').lower())
+            if pre == 's':
+                print(f'\n{cy}~Lursy: {vd}ah... Eu provavelmente não vou saber ajudar')
+                sleep(1)
+                print('        Eu só faço besteira...')
+                sleep(1)
+            print(f'\n{cy}~Lursy: {vd}Fazer o que né?...')
+            sleep(1)
+            print(f'        Acho que o {ve}Obelix {vd}me entende, vou conversar com ele')
+            sleep(0.7)
+            print('        e parar de te incomodar')
+            sleep(3)
+        if nl == 8:
+            print(f'{cy}~Lursy: {vd}To aqui de volta mano')
+            sleep(1)
+            print(f'        Eu conversei com o {ve}Obelix{vd}...')
+            sleep(1)
+            print('        Você me acha um ser ruim?')
+            sleep(1)
+            pre = str(input(f'{am}\nLursy é algo ruim?[S/N]: {ve}').lower())
+            if pre == 's':
+                sleep(1)
+                print(f'\n{cy}~Lursy: {vd}Não sabia que vc pensava isso mano...')
+                sleep(3)
+            elif pre == 'n':
+                sleep(1)
+                print(f'\n{cy}~Lursy: {vd}Vlw mano, vou estar sempre aqui caso precise')
+                sleep(3)
+                os.system('rm -rf .lursy')
+            else:
+                sleep(1)
+                print(f'\n{cy}~Lursy: {vd}Tudo bem... não precisa me responder...')
+                sleep(3)
+        if nl >= 16:
+            print(f'{rx}~Matheus: {am}Senhor, sinto-lhe informar')
+            sleep(2)
+            print(f'          {vd}Lursy {am}estava desaparecido faz um tempo...')
+            sleep(2)
+            print('          Infelizmente eu o encontrei...')
+            sleep(2)
+            print('          Por conta disso e em forma de luto eu não deixarei mais esse programa aqui')
+            os.system('rm -rf Persux/*')
+            global s
+            s = 4
 
 try:
     s = 0
+    contagem()
+    historia()
     while s != 4:
-
-            os.system('clear')
+            os.chdir('/data/data/com.termux/files/usr/etc/')
             print(rx)
+            os.system('clear')
             if nms != 1:
                 os.system('figlet Persux')
-                print(f'''{br}
-[1] - Mudar cor da letra
-[2] - Mudar banner
-[3] - Mudar senha
-[4] - Sair''')
+                print(f'''
+{am}[1] {br}- Mudar cor da letra
+{am}[2] {br}- Mudar banner
+{am}[3] {br}- Mudar senha
+{am}[4] {br}- Sair''')
             else:
                 print(f'{cy}~Lursy: {vd}Olá...')
                 sleep(1)
@@ -95,17 +168,19 @@ try:
                 sleep(1.4)
                 print(rx)
                 os.system('figlet Persux')
-                print(f'''{br}
-[1] - Adicionar cor da letra
-[2] - Adicionar banner
-[3] - Adicionar senha
-[4] - Sair''')
+                print(f'''
+{am}[1] {br}- Adicionar cor da letra
+{am}[2] {br}- Adicionar banner
+{am}[3] {br}- Adicionar senha
+{am}[4] {br}- Sair''')
             try:
+
                 menu = int(input(f'{am}//: {br}'))
                 if nms == 1 and menu < 4:
                     print(f'{cy}~Lursy: {vd}Boa escolha!')
                     sleep(1)
                     nms = 3
+
                 if menu == 1:
                     os.system('clear')
                     if vs:
@@ -122,6 +197,8 @@ try:
 {am}[5] {br}- Vermelho
 {am}[6] {br}- Voltar''')
                     cores = int(input(f'\n{am}//: {br}'))
+
+
                     if cores == 1:
                         os.system('rm -rf .Cor')
                         pc = open('.Cor', 'w')
@@ -254,9 +331,9 @@ try:
                                 os.system('rm -rf bash.bashrc')
                                 bash = open('bash.bashrc', 'w')
                                 cor = open('.Cor', 'r')
-                                senha = open('.Senha', 'r')
                                 vs = os.path.exists('.Senha')
                                 if vs:
+                                    senha = open('.Senha', 'r')
                                     bash.write(f'{inicio}\n{senha}\n{cor.read()}')
                                     bash.close()
                                 else:
@@ -376,10 +453,10 @@ try:
                             elif rem == 2:
                                 os.system('rm -rf .Senha')
                                 cor = open('.Cor', 'r')
-                                nick = open('.Nick', 'r')
                                 bash = open('bash.bashrc', 'w')
                                 vn = os.path.exists('.Nick')
                                 if vn:
+                                    nick = open('.Nick', 'r')
                                     bash.write(f'{inicio}\n{nick.read()}\n{cor.read()}')
                                 else:
                                     bash.write(f'{inicio}\n{cor.read()}')
@@ -443,7 +520,7 @@ rm -rf usr.py'''
                         sleep(0.5)
                         print(f'        Volte sempre!!')
                         sleep(1)
-                        print(f"        Bom... Hora de assistir anime {az}'-'")
+                        print(f"        Bom... Vou assistir anime agora {az}'-'")
                         sleep(2.3)
                     print(f'{ve}Saindo...')
                     sleep(1)
@@ -454,18 +531,32 @@ rm -rf usr.py'''
                     sleep(cont)
                     cont += 1
             except ValueError:
-                print('Não use letras nem caracteres por favor >:[')
+                if nms == 1:
+                    nms = 3
+                print(f'{ve}Não use letras nem caracteres por favor >:[')
                 sleep(cont)
                 cont += (cont * 2)
 except KeyboardInterrupt:
     if nms != 2:
+        os.chdir('/data/data/com.termux/files/home/')
+        lursy = open('.lursy', 'w')
+        lursy.write('1')
+        lursy.close()
         print(f'{cy}~Lursy: {vd}Pronto?')
         sleep(0.5)
         print(f'        Volte sempre!!')
         sleep(1)
-        print(f"        Bom... Hora de assistir anime {az}'-'")
+        print(f"        Bom... Vou assistir anime agora {az}'-'")
+        sleep(1)
+        print(f'''        {vd}Se eu não voltar é porque eu ando meio mal
+        talvez eu continue assistindo anime até isso passar''')
+        sleep(1.5)
+        print('        .')
+        sleep(0.4)
+        print('        .')
+        sleep(0.4)
+        print('        .')
         sleep(2.3)
     print(f'{vd}Saindo...')
     sleep(1)
     os.system('clear')
-
