@@ -152,7 +152,7 @@ try:
                 print(f'''
 {am}[1] {br}- Mudar cor da letra
 {am}[2] {br}- Mudar banner
-{am}[3] {br}- Mudar senha
+{am}[3] {br}- Mudar senha {ve}[Bug]
 {am}[4] {br}- Sair''')
             else:
                 print(f'{cy}~Lursy: {vd}Olá...')
