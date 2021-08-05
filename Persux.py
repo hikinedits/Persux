@@ -169,8 +169,8 @@ try:
                 print(rx)
                 os.system('figlet Persux')
                 print(f'''
-{am}[1] {br}- Adicionar cor da letra
-{am}[2] {br}- Adicionar banner
+{am}[1] {br}- Adicionar cor da letra {ve}[Bug]
+{am}[2] {br}- Adicionar banner {ve}[Bug]
 {am}[3] {br}- Adicionar senha {ve}[BUG]
 {am}[4] {br}- Sair''')
             try:
