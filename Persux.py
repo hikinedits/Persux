@@ -171,7 +171,7 @@ try:
                 print(f'''
 {am}[1] {br}- Adicionar cor da letra
 {am}[2] {br}- Adicionar banner
-{am}[3] {br}- Adicionar senha
+{am}[3] {br}- Adicionar senha {ve}[BUG]
 {am}[4] {br}- Sair''')
             try:
 
