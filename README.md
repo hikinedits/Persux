@@ -4,4 +4,5 @@
 > - ```cd Persux```
 > - ```python Persux.py```
 > - *```Aguarde a instalação```*  
+
 **Canal:** [`Lursy`](https://www.youtube.com/channel/UCwmkiKIZHL1wscYHfIINZKw)  
