@@ -19,12 +19,12 @@ export HISTCONTROL=ignoreboth
 
 banner = '''echo -e '\e[0;~COR~m'
 figlet ~N~
-echo -e '\e[m\n' '''
+echo -e '\e[m\\n' '''
 
 ac = f'figlet ~N~ |lolcat -a -d 25'
 
 Branco = '''PROMPT_DIRTRIM=2
-PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;97m\]\$\[\e[1;~COR~m\] '
+PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;97m\]\$ \[\e[1;~COR~m\]'
 
 if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-found ]; then
         command_not_found_handle() {
@@ -63,6 +63,10 @@ os.chdir('/data/data/com.termux/files/usr/etc/')
 vn = os.path.exists('.Nick')
 vs = os.path.exists('.Senha')
 vc = os.path.exists('.Cor')
+if not vc:
+    pc = open('.Cor', 'w')
+    pc.write(Branco.replace('~COR~', '37'))
+    pc.close()
 
 cont = 1
 senha = ''
@@ -152,7 +156,7 @@ try:
                 print(f'''
 {am}[1] {br}- Mudar cor da letra
 {am}[2] {br}- Mudar banner
-{am}[3] {br}- Mudar senha {ve}[Bug]
+{am}[3] {br}- Mudar senha
 {am}[4] {br}- Sair''')
             else:
                 print(f'{cy}~Lursy: {vd}Olá...')
@@ -195,10 +199,10 @@ try:
 {am}[3] {br}- Branco
 {am}[4] {br}- Amarelo
 {am}[5] {br}- Vermelho
-{am}[6] {br}- Voltar''')
+{am}[6] {br}- Ciano
+{am}[7] {br}- Roxo
+{am}[8] {br}- Voltar''')
                     cores = int(input(f'\n{am}//: {br}'))
-
-
                     if cores == 1:
                         os.system('rm -rf .Cor')
                         pc = open('.Cor', 'w')
@@ -305,15 +309,56 @@ try:
                                 bash.write(f'{inicio}\n{senha.read()}\n{cor.read()}')
                                 bash.close()
                     elif cores == 6:
+                        os.system('rm -rf .Cor')
+                        pc = open('.Cor', 'w')
+                        pc.write(f'{Branco.replace("~COR~", "36")}')
+                        pc.close()
+                        cor = open('.Cor', 'r')
+                        os.system('rm -rf bash.bashrc')
+                        bash = open('bash.bashrc', 'w')
+                        if vn and vs:
+                            bash.write(f'{inicio}\n{senha.read()}\n{nick.read()}\n{cor.read()}')
+                            bash.close()
+                        elif not vn and not vs:
+                            bash.write(f'{inicio}\n{cor.read()}')
+                            bash.close()
+                        else:
+                            if vn:
+                                bash.write(f'{inicio}\n{nick.read()}\n{cor.read()}')
+                                bash.close()
+                            else:
+                                bash.write(f'{inicio}\n{senha.read()}\n{cor.read()}')
+                                bash.close()
+                    elif cores == 7:
+                        os.system('rm -rf .Cor')
+                        pc = open('.Cor', 'w')
+                        pc.write(f'{Branco.replace("~COR~", "35")}')
+                        pc.close()
+                        cor = open('.Cor', 'r')
+                        os.system('rm -rf bash.bashrc')
+                        bash = open('bash.bashrc', 'w')
+                        if vn and vs:
+                            bash.write(f'{inicio}\n{senha.read()}\n{nick.read()}\n{cor.read()}')
+                            bash.close()
+                        elif not vn and not vs:
+                            bash.write(f'{inicio}\n{cor.read()}')
+                            bash.close()
+                        else:
+                            if vn:
+                                bash.write(f'{inicio}\n{nick.read()}\n{cor.read()}')
+                                bash.close()
+                            else:
+                                bash.write(f'{inicio}\n{senha.read()}\n{cor.read()}')
+                                bash.close()
+                    elif cores == 8:
                         os.system('clear')
                     else:
                         print(f'{ve}Comando não identificado...')
                         sleep(1)
 
                 elif menu == 2:
-                    rmn = 0
-                    if vc:
-                        cor = open('.Cor', 'r')
+                    cor = open('.Cor', 'r')
+                    vs = os.path.exists('.Senha')
                     if vs:
                         senha = open('.Senha', 'r')
                     def rn():
@@ -339,8 +384,9 @@ try:
                                 else:
                                     bash.write(f'{inicio}\n{cor.read()}')
                                     bash.close()
-                                global rmn
-                                rmn = 1
+                                print(f'{vd}Saindo')
+                                os.system('clear')
+                                exit()
                             elif rem == 1:
                                 sleep(1)
                             else:
@@ -350,8 +396,6 @@ try:
                                 rn()
                     rn()
                     os.system('clear')
-                    if rmn == 1:
-                        print(f'{ve}Para sair use CRTL+c')
                     print(ve)
                     os.system('figlet banner')
                     name = input(f'{am}Nick:{br} ')
@@ -433,11 +477,6 @@ try:
                         os.system('clear')
 
                 elif menu == 3:
-                    rms = 0
-                    if vn:
-                        nick = open('.Nick', 'r')
-                    if vc:
-                        cor = open('.Cor', 'r')
                     def rs():
                         vs = os.path.exists('.Senha')
                         if vs:
@@ -460,15 +499,15 @@ try:
                                     bash.write(f'{inicio}\n{nick.read()}\n{cor.read()}')
                                 else:
                                     bash.write(f'{inicio}\n{cor.read()}')
-                                global rms
-                                rms = 1
+                                print(f'{vd}Saindo')
+                                os.system('clear')
+                                exit()
                             else:
                                 print(f'{ve}Comando inválido!')
                                 rs()
                     rs()
+                    cor = open('.Cor', 'r')
                     os.system('clear')
-                    if rms == 1:
-                        print(f'{ve}Para sair use CRTL+c')
                     print(vd)
                     os.system('figlet Senha')
                     senhab = input(f'{am}Senha: {br}')
@@ -507,13 +546,14 @@ rm -rf usr.py'''
                     os.system('rm -rf bash.bashrc')
                     bash = open('bash.bashrc', 'w')
                     senha = open('.Senha', 'r')
+                    vn = os.path.exists('.Nick')
                     if vn:
+                        nick = open('.Nick', 'r')
                         bash.write(f'{inicio}\n{senha.read()}\n{nick.read()}\n{cor.read()}')
                         bash.close()
                     else:
                         bash.write(f'{inicio}\n{senha.read()}\n{cor.read()}')
                         bash.close()
-
                 elif menu == 4:
                     if nms != 2:
                         print(f'{cy}~Lursy: {vd}Pronto?')
