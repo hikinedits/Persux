@@ -1,5 +1,5 @@
 # Persux
-- Comandos
+- Comandos  
  1: ```pkg install python```  
  3: ```git clone https://github.com/mf256010/Persux```  
  3: ```cd Persux```  
