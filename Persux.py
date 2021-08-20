@@ -38,16 +38,18 @@ nms = 2
 os.chdir('/data/data/com.termux/files/home/')
 Ver = os.path.exists('.Instalação')
 if not Ver:
+    print(f'{vd}Instalando')
     os.system('clear')
-    os.system('pkg install figlet -y')
-    os.system('pkg install ruby -y')
-    os.system('y')
+    os.system('pkg install figlet -y>&/dev/null')
+    os.system('pkg install ruby -y>&/dev/null')
+    os.system('y>&/dev/null')
     os.system('clear')
-    os.system('git clone https://github.com/busyloop/lolcat')
-    os.system('clear')
+    print(f'{vd}Instalando.')
+    os.system('git clone https://github.com/busyloop/lolcat>&/dev/null')
     os.chdir('/data/data/com.termux/files/home/lolcat/bin/')
-    os.system('gem install lolcat')
+    os.system('gem install lolcat>&/dev/null')
     os.system('clear')
+    print(f'{vd}Instalando..')
     os.chdir('/data/data/com.termux/files/home/')
     os.system('rm -rf lolcat')
     os.chdir('/data/data/com.termux/files/usr/etc/')
@@ -56,6 +58,7 @@ if not Ver:
     Ins = open('.Instalação', 'a')
     Ins.write('By_Matheus')
     os.system('clear')
+    print(f'{vd}Instalando...')
     nms = 1
 
 
