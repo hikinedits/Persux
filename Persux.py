@@ -46,7 +46,7 @@ if not Ver:
     print(f'{vd}Instalando.')
     os.system('git clone https://github.com/busyloop/lolcat')
     os.chdir('/data/data/com.termux/files/home/lolcat/bin/')
-    os.system('gem install lolcat>&/dev/null')
+    os.system('gem install lolcat')
     os.system('clear')
     os.chdir('/data/data/com.termux/files/home/')
     os.system('rm -rf lolcat')
