@@ -1,9 +1,10 @@
-from data import install
+from data.install import *
+install()
+user = (open('user', 'r')).readline()[:-1]
 from data.menu import *
 
 
 nms = 2
-install.install()
 pacote()
 
 try:
