@@ -1,9 +1,16 @@
+from os import path
+usr = path.exists('.usuario')
+if not usr:
+    user = open('.usuario', 'w')
+    user.write('No_name')
+    user.close()
+
+
 from data.install import *
-install()
-user = (open('user', 'r')).readline()[:-1]
 from data.menu import *
 
 
+install()
 nms = 2
 pacote()
 
