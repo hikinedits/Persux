@@ -12,8 +12,6 @@ cy = '\033[1;36m'  # Ciano
 rx = '\033[0;35m'  # Roxo
 
 
-user = (open('.usuario', 'r')).readline()[:-1]
-
 inicio = '''shopt -s histappend
 shopt -s histverify
 export HISTCONTROL=ignoreboth
