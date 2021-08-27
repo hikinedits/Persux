@@ -12,7 +12,7 @@ cy = '\033[1;36m'  # Ciano
 rx = '\033[0;35m'  # Roxo
 
 
-user = (open('user', 'r')).readline()[:-1]
+user = (open('.usuario', 'r')).readline()[:-1]
 
 inicio = '''shopt -s histappend
 shopt -s histverify
