@@ -1,4 +1,3 @@
-from time import sleep
 import os
 
 
@@ -22,7 +21,7 @@ echo -e '\e[m\\n' '''
 
 ac = f'figlet ~N~ |lolcat -a -d 25'
 
-user = (open('.usuario', 'r')).readline()[:-1]
+user = (open('.usuario', 'r')).readline()
 
 cor_letra = f'''PROMPT_DIRTRIM=2
 PS1='\[\e[0;31m\]┏(\[\e[0;34m\]{user}\[\e[0;31m\]) [\[\e[0;32m\]\w\[\e[0;31m\]] \\n\[\e[0;31m\]┗► \[\e[1;:corm\]'
