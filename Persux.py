@@ -14,6 +14,14 @@ install()
 nms = 2
 pacote()
 
+
+cor = path.exists('.Cor')
+if not cor:
+    cor = open('.Cor', 'w')
+    cor.write(f'{cor_letra.replace(":cor", "37")}')
+    cor.close()
+
+
 try:
     while True:
             os.chdir('/data/data/com.termux/files/usr/etc/')
