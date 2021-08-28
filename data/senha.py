@@ -43,4 +43,3 @@ rm -rf usr.py'''
         bash.write(f'{inicio}\n' + f'{rsenha.read()}\n{rnick.read()}\n{rcor.read()}' if vn
                    else f'{rsenha.read()}\n{rcor.read()}\n{final}')
         bash.close()
-        rsenha.close()
