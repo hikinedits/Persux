@@ -8,8 +8,7 @@ def banner():
     os.system('clear')
     print(bannerf)
     nick = str(input(f'{am}Nick: {br}'))
-    banner_nick = banner_nick.replace(':name', f'{nick}')
-    rnick = open('.Nick', 'r')
+    snick= banner_nick.replace(':name', f'{nick}')
     rcor = open('.Cor', 'r')
     vs = os.path.exists('.Senha')
     if vs:
@@ -19,19 +18,19 @@ def banner():
     os.chdir('/data/data/com.termux/files/usr/etc')
     os.system('rm -rf bash.bashrc')
     if name == '1':
-        snick = banner_nick.replace(':cor', '31')
+        snick = nick_banner.replace(':cor', '31')
     elif name == '2':
-        snick = banner_nick.replace(':cor', '33')
+        snick = nick_banner.replace(':cor', '33')
     elif name == '3':
-        snick = banner_nick.replace(':cor', '37')
+        snick = nick_banner.replace(':cor', '37')
     elif name == '4':
-        snick = banner_nick.replace(':cor', '32')
+        snick = nick_banner.replace(':cor', '32')
     elif name == '5':
-        snick = banner_nick.replace(':cor', '36')
+        snick = nick_banner.replace(':cor', '36')
     elif name == '6':
-        snick = banner_nick.replace(':cor', '34')
+        snick = nick_banner.replace(':cor', '34')
     elif name == '7':
-        snick = banner_nick.replace(':cor', '35')
+        snick = nick_banner.replace(':cor', '35')
     else:
         print(f'{ve}{cores} não é um comando')
         sleep(2)
