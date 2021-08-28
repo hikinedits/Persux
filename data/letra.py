@@ -3,36 +3,34 @@ from data.menu import coresf, menu_cores
 
 
 def letra():
-    erro = 0
-    rnick = scor = rsenha = ''
-    os.system('clear')
-    vn = os.path.exists('.Nick')
-    vs = os.path.exists('.Senha')
-    print(coresf)
-    print(menu_cores)
-    cores = str(input(f'\n{am}//: {br}'))
-    os.chdir('/data/data/com.termux/files/usr/etc')
-    os.system('rm -rf bash.bashrc')
-    if cores == '1':
-        scor = cor_letra.replace(':cor', '31')
-    elif cores == '2':
-        scor = cor_letra.replace(':cor', '33')
-    elif cores == '3':
-        scor = cor_letra.replace(':cor', '37')
-    elif cores == '4':
-        scor = cor_letra.replace(':cor', '32')
-    elif cores == '5':
-        scor = cor_letra.replace(':cor', '36')
-    elif cores == '6':
-        scor = cor_letra.replace(':cor', '34')
-    elif cores == '7':
-        scor = cor_letra.replace(':cor', '35')
-    else:
-        print(f'{ve}{cores} não é um comando')
-        sleep(2)
+    while True:
         os.system('clear')
-        erro = 1
-    if erro == 0:
+        vn = os.path.exists('.Nick')
+        vs = os.path.exists('.Senha')
+        print(coresf)
+        print(menu_cores)
+        cores = str(input(f'\n{am}//: {br}'))
+        os.chdir('/data/data/com.termux/files/usr/etc')
+        os.system('rm -rf bash.bashrc')
+        if cores == '1':
+            scor = cor_letra.replace(':cor', '31')
+        elif cores == '2':
+            scor = cor_letra.replace(':cor', '33')
+        elif cores == '3':
+            scor = cor_letra.replace(':cor', '37')
+        elif cores == '4':
+            scor = cor_letra.replace(':cor', '32')
+        elif cores == '5':
+            scor = cor_letra.replace(':cor', '36')
+        elif cores == '6':
+            scor = cor_letra.replace(':cor', '34')
+        elif cores == '7':
+            scor = cor_letra.replace(':cor', '35')
+        else:
+            print(f'{ve}{cores} não é um comando')
+            sleep(2)
+            os.system('clear')
+            break
         os.system('rm -rf .Cor')
         cor_file = open('.Cor', 'w')
         cor_file.write(f'{scor}')
@@ -47,5 +45,4 @@ def letra():
                    if vs and vn else f'{rsenha.read()}' if not vn
                    else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
         bash.close()
-        rcor.close()
-        os.system('clear')
+        break
