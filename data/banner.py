@@ -4,11 +4,11 @@ from data.menu import bannerf, menu_cores
 
 def banner():
     erro = 0
-    rsenha = ''
+    snick = rsenha = ''
     os.system('clear')
     print(bannerf)
     nick = str(input(f'{am}Nick: {br}'))
-    snick= banner_nick.replace(':name', f'{nick}')
+    nick_banner = banner_nick.replace(':name', f'{nick}')
     rcor = open('.Cor', 'r')
     vs = os.path.exists('.Senha')
     if vs:
