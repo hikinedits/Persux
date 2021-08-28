@@ -14,7 +14,7 @@ install()
 nms = 2
 pacote()
 
-
+os.chdir('/data/data/com.termux/files/usr/etc/')
 cor = path.exists('.Cor')
 if not cor:
     cor = open('.Cor', 'w')
@@ -24,7 +24,6 @@ if not cor:
 
 try:
     while True:
-            os.chdir('/data/data/com.termux/files/usr/etc/')
             if nms != 1:
                 print(persuxf)
                 print(menu_inicial)
