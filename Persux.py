@@ -1,8 +1,3 @@
-from os import path
-if not usr:
-
-
-
 from data.install import *
 from data.menu import *
 
