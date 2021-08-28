@@ -1,4 +1,3 @@
-from data.ferramentas import vd, ve
 import os
 
 
@@ -8,7 +7,7 @@ def install():
     Ver = os.path.exists('.usuario')
     if not Ver:
         os.system('clear')
-        user = str(input(f'{vd}Nome: {ve}'))
+        user = str(input(f'\033[0;32mNome: \033[0;31m'))
         os.system('clear')
         os.system('pkg install figlet -y')
         os.chdir('/data/data/com.termux/files/usr/etc/')
