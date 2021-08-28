@@ -1,8 +1,8 @@
 from data.install import *
+install()
 from data.menu import *
 
 
-install()
 nms = 2
 
 
