@@ -1,4 +1,4 @@
-from data.ferramentas.cores import *
+from data.ferramentas import *
 
 
 def install():
