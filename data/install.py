@@ -1,4 +1,4 @@
-from data.ferramentas import *
+from data.ferramentas.cores import *
 
 
 def install():
@@ -11,6 +11,10 @@ def install():
         os.system('clear')
         os.system('pkg install figlet -y')
         os.chdir('/data/data/com.termux/files/usr/etc/')
+        os.system('rm -rf .Cor')
+        cor = open('.Cor', 'w')
+        cor.write(f'{cor_letra.replace(":cor", "37")}')
+        cor.close()
         os.system('rm -rf motd')
         os.chdir('/data/data/com.termux/files/home/')
         user_file = open('.usuario', 'w')
