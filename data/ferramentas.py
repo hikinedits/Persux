@@ -2,7 +2,6 @@ from time import sleep
 import os
 
 
-# Cores
 ve = '\033[1;31m'  # Vermelho
 vd = '\033[1;32m'  # Verde
 am = '\033[1;33m'  # Amarelo
@@ -41,10 +40,3 @@ cont = 1
 pss = nick = cor = senha = ''
 os.chdir('/data/data/com.termux/files/usr/etc/')
 vc = os.path.exists('.Cor')
-
-
-def pacote():
-    if not vc:
-        pc = open('.Cor', 'w')
-        pc.write(cor_letra.replace('~COR~', '37'))
-        pc.close()
