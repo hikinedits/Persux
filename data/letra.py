@@ -7,6 +7,10 @@ def letra():
         os.system('clear')
         vn = os.path.exists('.Nick')
         vs = os.path.exists('.Senha')
+        if vs:
+            rsenha = open('.Senha', 'r')
+        if vn:
+            rnick = open('.Nick', 'r')
         print(coresf)
         print(menu_cores)
         cores = str(input(f'\n{am}//: {br}'))
@@ -37,10 +41,6 @@ def letra():
         cor_file.close()
         rcor = open('.Cor', 'r')
         bash = open('bash.bashrc', 'w')
-        if vs:
-            rsenha = open('.Senha', 'r')
-        if vn:
-            rnick = open('.Nick', 'r')
         bash.write((f'{inicio}\n') + (f'{rsenha.read()}\n{rnick.read()}'
                    if vs and vn else f'{rsenha.read()}' if not vn
                    else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
