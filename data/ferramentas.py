@@ -31,6 +31,3 @@ final ='''if [ -x /data/data/com.termux/files/usr/libexec/termux/command-not-fou
         }
 fi
 '''
-
-rnick = rsenha = open('.usuario', 'r')
-
