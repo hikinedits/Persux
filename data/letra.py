@@ -3,6 +3,7 @@ from data.menu import coresf, menu_cores
 
 
 def letra():
+    rnick = rsenha = open('.usuario', 'r')
     while True:
         os.system('clear')
         vn = os.path.exists('.Nick')
