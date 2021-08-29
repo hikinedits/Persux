@@ -21,7 +21,15 @@ try:
             print('        Esse é o menu, fique a vontade :D')
             sleep(1.4)
         print(persuxf)
-        print(menu_inicial)
+        user = (open('.usuario', 'r')).readline()
+        print(f'''{ve}┏━━━━━━━━━━━━━━━━━┓
+  {am}[ 1 ] {br}-{cy} letra
+  {am}[ 2 ] {br}-{cy} banner
+  {am}[ 3 ] {br}-{cy} senha
+  {am}[ 4 ] {br}-{cy} {user}
+  {am}[ 5 ] {br}-{cy} Sair
+{ve}┗━━━━━━━━━━━━━━━━━┛
+''')
         menu = int(input(f'{am}//: {br}'))
         if nms == 1 and menu < 4:
             print(f'{cy}~Lursy: {vd}Boa escolha!')
@@ -37,25 +45,9 @@ try:
             from data.senha import senha
             senha()
         elif menu == 4:
-            print(menu_nome)
-            options = str(input(f'{am}//: {br}'))
-            if options == '1':
-                os.chdir('/data/data/com.termux/files/home/')
-                os.system('rm -rf .usuario')
-                os.system('clear')
-                user = str(input(f'{am}Nome: {ve}'))
-                user_file = open('.usuario', 'w')
-                user_file.write(user)
-                user_file.close()
-                user = (open('.usuario', 'r')).readline()
-                from data.menu import menu_inicial
-                os.chdir('/data/data/com.termux/files/usr/etc/')
-            else:
-                print(f'{ve}Comando inválido!' if options != '2'
-                      else '')
-                sleep(2 if options != '2'
-                      else 0.5)
-                os.system('clear')
+            from data.nome import nome_letra
+            nome_letra()
+            from data.ferramentas import *
         elif menu == 5:
             print(f'\n{vd}Saindo...')
             sleep(1)
