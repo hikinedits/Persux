@@ -41,9 +41,8 @@ def letra():
             rsenha = open('.Senha', 'r')
         if vn:
             rnick = open('.Nick', 'r')
-        if os.path.exists('.Cor'):
-            bash.write((f'{inicio}\n') + (f'{rsenha.read()}\n{rnick.read()}'
-                       if vs and vn else f'{rsenha.read()}' if not vn
-                       else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
+        bash.write((f'{inicio}\n') + (f'{rsenha.read()}\n{rnick.read()}'
+                   if vs and vn else f'{rsenha.read()}' if not vn
+                   else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
         bash.close()
         break
