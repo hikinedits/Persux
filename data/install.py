@@ -3,7 +3,7 @@ import os
 
 def install():
     global nms
-    os.chdir('/data/data/com.termux/files/home/')
+    os.chdir('/data/data/com.termux/files/usr/etc/')
     Ver = os.path.exists('.usuario')
     if not Ver:
         os.system('clear')
