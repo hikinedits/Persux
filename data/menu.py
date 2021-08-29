@@ -1,15 +1,7 @@
-from data.ferramentas import *
+from data.ferramentas import am, br, cy, az, rx, ve, vd
 
 
 #Menus
-menu_inicial = f'''{ve}┏━━━━━━━━━━━━━━━━━┓
-  {am}[ 1 ] {br}-{cy} letra
-  {am}[ 2 ] {br}-{cy} banner
-  {am}[ 3 ] {br}-{cy} senha
-  {am}[ 4 ] {br}-{cy} {user}
-  {am}[ 5 ] {br}-{cy} Sair
-{ve}┗━━━━━━━━━━━━━━━━━┛
-'''
 menu_cores = f'''{ve}┏━━━━━━━━━━━━━━━━━━━┓
   {am}[ 1 ] {br}-{ve} Vermelho
   {am}[ 2 ] {br}-{am} Amarelo
