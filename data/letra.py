@@ -5,8 +5,6 @@ from data.menu import coresf, menu_cores
 def letra():
     while True:
         os.system('clear')
-        rsenha = ''
-        rnick = ''
         vn = os.path.exists('.Nick')
         vs = os.path.exists('.Senha')
         print(coresf)
@@ -43,8 +41,9 @@ def letra():
             rsenha = open('.Senha', 'r')
         if vn:
             rnick = open('.Nick', 'r')
-        bash.write((f'{inicio}\n') + (f'{rsenha.read()}\n{rnick.read()}'
-                   if vs and vn else f'{rsenha.read()}' if not vn
-                   else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
+        if os.path.exists('.Cor'):
+            bash.write((f'{inicio}\n') + (f'{rsenha.read()}\n{rnick.read()}'
+                       if vs and vn else f'{rsenha.read()}' if not vn
+                       else f'{rnick.read()}') + (f'\n{rcor.read()}{final}'))
         bash.close()
         break
