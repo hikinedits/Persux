@@ -4,7 +4,6 @@ from data.menu import bannerf, menu_cores
 
 def banner():
     while True:
-        rsenha = ''
         os.system('clear')
         print(bannerf)
         nick = str(input(f'{am}Nick: {br}'))
@@ -41,7 +40,8 @@ def banner():
         nick_file.close()
         rnick = open('.Nick', 'r')
         bash = open('bash.bashrc', 'w')
-        bash.write(f'{inicio}\n' + f'{rsenha.read()}\n{rnick.read()}\n{rcor.read()}'if vs
-                   else f'{rnick.read()}\n{rcor.read()}\n{final}')
+        if os.path.exists('.Nick'):
+            bash.write(f'{inicio}\n' + f'{rsenha.read()}\n{rnick.read()}\n{rcor.read()}'if vs
+                        else f'{rnick.read()}\n{rcor.read()}\n{final}')
         bash.close()
         break
