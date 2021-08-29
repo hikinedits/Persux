@@ -5,6 +5,8 @@ from data.menu import coresf, menu_cores
 def letra():
     while True:
         os.system('clear')
+        rsenha = ''
+        rnick = ''
         vn = os.path.exists('.Nick')
         vs = os.path.exists('.Senha')
         print(coresf)
