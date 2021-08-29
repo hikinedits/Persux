@@ -19,7 +19,7 @@ banner_nick = '''echo -e '\e[0;:corm'
 figlet :name
 echo -e '\e[m\\n' '''
 
-user = ''
+usr = ''
 
 cor_letra = f'''PROMPT_DIRTRIM=2
 PS1='\[\e[0;31m\]┏(\[\e[0;34m\]{user}\[\e[0;31m\]) [\[\e[0;32m\]\w\[\e[0;31m\]] \\n\[\e[0;31m\]┗► \[\e[1;:corm\]'
